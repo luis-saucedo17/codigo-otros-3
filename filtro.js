@@ -8,8 +8,12 @@ const productos = [
   {nombre: "Zapato rojo", tipo: "zapato", color: "rojo", img: "./zapato-rojo.jpg"}
 ]
 
-const li = document.getElementsByName("lista-de-productos")
-const $i = document.querySelector('.input');
+//Estaba haciendo mal la referencia al div 
+const li = document.getElementById("lista-de-productos");
+console.log(li)
+//No hay un elemento con clase input, hace mal uso de selector
+const $i = document.getElementsByTagName('input')[0];
+console.log($i)
 
 for (let i = 0; i < productos.length; i++) {
   var d = document.createElement("div")
@@ -28,7 +32,7 @@ for (let i = 0; i < productos.length; i++) {
   li.appendChild(d)
 }
 
-displayProductos(productos)
+
 const botonDeFiltro = document.querySelector("button");
 
 botonDeFiltro.onclick = function() {
